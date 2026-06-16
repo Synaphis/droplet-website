@@ -291,7 +291,7 @@ export default function Home() {
           {supportViews.map((view) => (
             <article className="supportCard" key={view.title}>
               <PhoneMock src={view.src} alt={view.alt} />
-              <div>
+              <div className="supportCaption">
                 <h3>{view.title}</h3>
                 <p>{view.copy}</p>
               </div>

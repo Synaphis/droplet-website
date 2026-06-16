@@ -551,9 +551,16 @@ h3 {
   display: grid;
   align-content: start;
   gap: 26px;
+  justify-items: center;
   padding: clamp(22px, 3vw, 34px);
   border-color: transparent;
   background: transparent;
+}
+
+.supportCaption {
+  width: min(100%, 270px);
+  padding-top: 18px;
+  border-top: 1px solid var(--hairline);
 }
 
 .privacySection {
