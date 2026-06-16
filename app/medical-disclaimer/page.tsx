@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Medical Disclaimer | Droplet AI"
+  title: "Medical Disclaimer | Droplet AI",
+  description: "Medical disclaimer for Droplet AI skincare guidance."
 };
 
 export default function MedicalDisclaimerPage() {
@@ -11,14 +12,21 @@ export default function MedicalDisclaimerPage() {
         <a href="/">Back to Droplet AI</a>
         <h1>Medical Disclaimer</h1>
         <p>
-          Droplet AI gives ingredient and formulation guidance. It is not a medical device and does not replace a qualified professional.
+          Effective date: June 16, 2026. Droplet AI gives ingredient, formulation, claim, and routine guidance for skincare products. It is not a medical device and does not replace a qualified professional.
         </p>
       </header>
 
       <section className="legalSection">
         <h2>Not medical advice</h2>
         <p>
-          Droplet AI does not diagnose, treat, cure, or prevent skin conditions. Scores, reports, cautions, and routine suggestions are informational and should not be treated as medical certainty.
+          Droplet AI does not diagnose, treat, cure, or prevent skin conditions. Scores, reports, cautions, claim checks, ingredient explanations, and routine suggestions are informational and should not be treated as medical certainty, professional advice, or a substitute for individualized medical care.
+        </p>
+      </section>
+
+      <section className="legalSection">
+        <h2>No emergency use</h2>
+        <p>
+          Droplet AI should not be used for emergencies, severe reactions, urgent care decisions, or decisions about prescription treatments. If symptoms are serious or rapidly worsening, seek appropriate medical care.
         </p>
       </section>
 
@@ -36,6 +44,13 @@ export default function MedicalDisclaimerPage() {
         <h2>Patch testing and tolerance</h2>
         <p>
           Even products that appear compatible can irritate some users. Introduce new products carefully, follow product label instructions, and stop use when concerning reactions occur.
+        </p>
+      </section>
+
+      <section className="legalSection">
+        <h2>Product information can change</h2>
+        <p>
+          Product formulas, labels, ingredient lists, warnings, and directions can change. Users should always review current packaging, follow manufacturer instructions, and consider personal medical history before using a product.
         </p>
       </section>
     </main>

@@ -1,4 +1,6 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
+import ScrollMotion from "./scroll-motion";
 
 type Phone = {
   src: string;
@@ -7,53 +9,64 @@ type Phone = {
   priority?: boolean;
 };
 
-const pillars = [
-  {
-    title: "Checks the label",
-    copy: "Ingredient roles, formula signals, usage directions, and front-label claims are read together instead of treated as separate clues."
-  },
-  {
-    title: "Reads against you",
-    copy: "Sensitivity, goals, avoid-list, climate, history, and routine context shape the verdict so the same product can mean different things for different people."
-  },
-  {
-    title: "Turns advice into memory",
-    copy: "Reports, saved products, skipped steps, reactions, and adherence history become context for the next decision."
-  }
+const doubtQuestions = [
+  "Is the claim real?",
+  "Will this irritate me?",
+  "Where does it fit?",
+  "What happened last time?"
+];
+
+const scanFragments = [
+  "Fragrance-free",
+  "10% niacinamide",
+  "Patch test advised",
+  "Medium risk"
 ];
 
 const formulaChecks = [
-  "Ingredient roles and cautions",
-  "Marketing claims compared with formula evidence",
-  "Profile fit for sensitivity, acne tendency, goals, avoid-list, and climate",
-  "Routine placement for morning, evening, and night"
+  "Ingredients translated into roles, benefits, and cautions.",
+  "Claims checked against formula evidence instead of front-label language.",
+  "Profile fit read against sensitivity, acne tendency, goals, avoid-list, climate, and history.",
+  "Routine placement for morning, evening, night, and products already in use."
 ];
 
 const reportViews = [
   {
+    label: "History",
     src: "/screens/phone-mockups/reports-list.png",
     alt: "Droplet reports list with saved skincare scan reports."
   },
   {
+    label: "Score",
     src: "/screens/phone-mockups/report-overview.png",
     alt: "Droplet report overview with trust score and category scores."
   },
   {
+    label: "Verdict",
     src: "/screens/phone-mockups/report-verdict.png",
     alt: "Droplet report verdict with plain-language summary."
   },
   {
+    label: "Reasoning",
     src: "/screens/phone-mockups/score-reasoning.png",
     alt: "Droplet report score reasoning across safety, irritation, and claims."
   },
   {
+    label: "Claims",
     src: "/screens/phone-mockups/claims-fact-check.png",
     alt: "Droplet report marketing claim checks with supported and partial labels."
   },
   {
+    label: "Fit",
     src: "/screens/phone-mockups/profile-fit-directions.png",
     alt: "Droplet report profile fit and usage direction guidance."
   }
+];
+
+const routineNotes = [
+  "Turns a product verdict into a usable step.",
+  "Keeps timing, order, and reminders visible.",
+  "Uses history so the next decision is not a reset."
 ];
 
 const adherenceViews = [
@@ -114,13 +127,6 @@ const plans = [
   }
 ];
 
-const questions = [
-  "Will this irritate me?",
-  "Is this claim real?",
-  "Where does it fit in my routine?",
-  "What did I use last time?"
-];
-
 function PhoneMock({ src, alt, className = "", priority = false }: Phone) {
   return (
     <div className={`phoneMock ${className}`}>
@@ -140,6 +146,7 @@ function PhoneMock({ src, alt, className = "", priority = false }: Phone) {
 export default function Home() {
   return (
     <main>
+      <ScrollMotion />
       <nav className="nav" aria-label="Main navigation">
         <a className="brand" href="#top" aria-label="Droplet AI home">
           <Image className="brandMark" src="/logo-mark.png" alt="" width={64} height={64} aria-hidden="true" priority />
@@ -149,7 +156,7 @@ export default function Home() {
           <a href="#scan">Scan</a>
           <a href="#reports">Reports</a>
           <a href="#routine">Routine</a>
-          <a href="/community">Community</a>
+          <a href="#pricing">Pricing</a>
           <a href="/privacy">Privacy</a>
         </div>
         <a className="navCta" href="#pricing">Try free</a>
@@ -157,14 +164,14 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="heroCopy">
-          <p className="kicker">Private skincare intelligence</p>
-          <h1>Check the product before your skin has to.</h1>
-          <p className="lede">
-            Droplet AI scans skincare labels, explains the formula, checks the claims, and remembers what fits your routine so every purchase starts with evidence instead of hope.
+          <p className="heroKicker heroEnter heroEnterOne">Private skincare intelligence</p>
+          <h1 className="heroEnter heroEnterTwo">Before it touches your skin, check the label.</h1>
+          <p className="lede heroEnter heroEnterThree">
+            Droplet AI scans the product in your hand, explains the formula behind the promise, and turns the decision into a routine your skin can actually live with.
           </p>
-          <div className="heroActions" id="download">
+          <div className="heroActions heroEnter heroEnterFour" id="download">
             <a className="storeButton primary" href="#pricing" aria-label="Try Droplet AI on the App Store">
-              <span>Download on</span>
+              <span>Try free on</span>
               <strong>App Store</strong>
             </a>
             <a className="storeButton secondary" href="#pricing" aria-label="Try Droplet AI on Google Play">
@@ -173,7 +180,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="heroVisual" aria-label="Droplet app screenshots">
+        <div className="heroVisual heroEnter heroEnterFive" aria-label="Droplet app screenshots">
           <PhoneMock
             className="heroMain"
             src="/screens/phone-mockups/today-dashboard.png"
@@ -182,114 +189,128 @@ export default function Home() {
           />
           <PhoneMock
             className="heroFloat"
-            src="/screens/phone-mockups/claims-fact-check.png"
-            alt="Droplet report checking skincare marketing claims against formula evidence."
+            src="/screens/phone-mockups/report-overview.png"
+            alt="Droplet report overview with trust score and category scores."
             priority
           />
         </div>
       </section>
 
-      <section className="questionStrip" aria-label="Common skincare questions">
-        {questions.map((question) => (
-          <span key={question}>{question}</span>
-        ))}
-      </section>
-
-      <section className="manifesto">
-        <p>
-          Skincare advice is everywhere. Personal evidence is harder to find. Droplet is the quiet check between a persuasive label and your actual skin.
-        </p>
-      </section>
-
-      <section className="pillarSection" aria-label="How Droplet helps">
-        {pillars.map((pillar) => (
-          <article className="featureCard" key={pillar.title}>
-            <h3>{pillar.title}</h3>
-            <p>{pillar.copy}</p>
-          </article>
-        ))}
-      </section>
-
-      <section className="decisionSection" id="scan">
-        <div className="sectionStack">
-          <p className="sectionLabel">Label-first scan</p>
-          <h2>Start with the product in your hand.</h2>
+      <section className="doubtSection reveal" aria-label="Common skincare uncertainty">
+        <div className="doubtCopy">
+          <h2>The tiny pause before a product becomes part of your skin.</h2>
           <p>
-            The camera view keeps the label centered so the report begins from product evidence: ingredients, directions, claims, category, and the context needed to interpret them.
+            That pause is where Droplet belongs: between persuasive packaging and the personal risk of buying, layering, or repeating something that may not fit.
           </p>
         </div>
-        <div className="decisionGrid">
-          <article className="scanPanel">
+        <div className="questionGrid">
+          {doubtQuestions.map((question) => (
+            <span key={question}>{question}</span>
+          ))}
+        </div>
+      </section>
+
+      <section className="flowSection reveal" aria-label="Droplet decision flow">
+        <Image src="/story-assets/flow-mark.svg" alt="" width={980} height={168} aria-hidden="true" />
+      </section>
+
+      <section className="scanStory" id="scan">
+        <div className="sectionIntro reveal">
+          <span className="chapterLabel">Label-first scan</span>
+          <h2>Start with the product in your hand.</h2>
+          <p>
+            The camera keeps the label centered so the report begins from evidence: ingredients, directions, claims, category, and the context needed to interpret them.
+          </p>
+        </div>
+        <div className="scanStage">
+          <div className="scanAsset reveal" aria-hidden="true">
+            <Image src="/story-assets/label-fragments.svg" alt="" width={430} height={520} />
+          </div>
+          <div className="scannerPhone reveal">
             <PhoneMock src="/screens/phone-mockups/camera-scan.png" alt="Droplet AI camera scanner framing a skincare product label." />
-          </article>
-          <article className="checkListPanel">
-            <h3>What gets reviewed</h3>
-            <ul>
-              {formulaChecks.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
+            <span className="scanFocus" aria-hidden="true" />
+          </div>
+          <div className="scanNotes reveal">
+            {scanFragments.map((fragment) => (
+              <span key={fragment}>{fragment}</span>
+            ))}
+          </div>
+        </div>
+        <div className="checkListPanel reveal">
+          <h3>What gets reviewed</h3>
+          <ul>
+            {formulaChecks.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
       <section className="reportSection" id="reports">
-        <div className="reportCopy">
-          <p className="sectionLabel">Explainability</p>
+        <div className="reportCopy reveal">
+          <span className="chapterLabel dark">Explainability</span>
           <h2>A report that shows its work.</h2>
           <p>
             Droplet avoids mystery scores. Every verdict shows why the formula may fit, where caution belongs, which claims are supported, and what the user should do next.
           </p>
         </div>
-        <div className="reportGallery" aria-label="Report screenshots">
-          {reportViews.map((view) => (
-            <PhoneMock key={view.src} src={view.src} alt={view.alt} />
+        <div className="reportTrail" aria-label="Report screenshots">
+          {reportViews.map((view, index) => (
+            <article className="reportFrame reveal" key={view.src} style={{ "--delay": `${index * 70}ms` } as CSSProperties}>
+              <span>{view.label}</span>
+              <PhoneMock src={view.src} alt={view.alt} />
+            </article>
           ))}
         </div>
       </section>
 
       <section className="routineSection" id="routine">
-        <div className="routineCopy">
-          <p className="sectionLabel">Routine memory</p>
+        <div className="routineCopy reveal">
+          <span className="chapterLabel">From report to routine</span>
           <h2>Your next routine should remember your last one.</h2>
           <p>
-            Droplet connects the product verdict to what happens tonight and next week: timing, order, tolerance, reminders, and the history that keeps mistakes from repeating.
+            Buying the product is only half the decision. Droplet carries the verdict into timing, order, tolerance, reminders, and history so advice becomes something usable tonight.
           </p>
+          <div className="routineNotes">
+            {routineNotes.map((note) => (
+              <span key={note}>{note}</span>
+            ))}
+          </div>
         </div>
-        <div className="routinePhones">
-          <PhoneMock src="/screens/phone-mockups/routine-dashboard.png" alt="Droplet routine dashboard with reminders, products, and AI routine controls." />
-          <PhoneMock src="/screens/phone-mockups/ai-routine-generating.png" alt="Droplet generated routine screens shaped by user profile and history." />
+        <div className="routinePhones reveal">
+          <PhoneMock className="routinePrimary" src="/screens/phone-mockups/routine-dashboard.png" alt="Droplet routine dashboard with reminders, products, and AI routine controls." />
+          <PhoneMock className="routineSecondary" src="/screens/phone-mockups/ai-routine-generating.png" alt="Droplet generated routine screens shaped by user profile and history." />
         </div>
       </section>
 
       <section className="adherenceSection" id="adherence">
-        <div className="sectionStack center">
-          <p className="sectionLabel">No guilt loops</p>
-          <h2>Adherence that helps users recover.</h2>
+        <div className="sectionIntro center reveal">
+          <span className="chapterLabel">Adherence without shame</span>
+          <h2>Missed steps become context, not failure.</h2>
           <p>
-            Droplet treats missed steps as context, not failure. The adherence views keep the score, streak, calendar, and schedule visible, then explain what changed and how to recover the routine without guesswork.
+            The adherence view keeps the droplet score, streak, calendar, and schedule visible, while the explainer shows what changed, why the score moved, and how to recover the routine without guilt or guesswork.
           </p>
         </div>
         <div className="adherenceGrid">
-          {adherenceViews.map((view) => (
-            <div className="adherenceCard" key={view.src}>
+          {adherenceViews.map((view, index) => (
+            <div className="adherenceCard reveal" key={view.src} style={{ "--delay": `${index * 90}ms` } as CSSProperties}>
               <PhoneMock src={view.src} alt={view.alt} />
             </div>
           ))}
         </div>
       </section>
 
-      <section className="supportSection" id="supporting-views">
-        <div className="sectionStack">
-          <p className="sectionLabel">Control surface</p>
-          <h2>The smaller controls make the product easier to live with.</h2>
+      <section className="controlSection" id="supporting-views">
+        <div className="sectionIntro reveal">
+          <span className="chapterLabel">Control and privacy</span>
+          <h2>The smaller controls make Droplet easier to trust.</h2>
           <p>
-            Reminders, settings, account, and plan controls matter because skincare routines are daily systems, not one-time scans.
+            Reminders, settings, profile preferences, account controls, and plan details matter because skincare routines are daily systems, not one-time scans.
           </p>
         </div>
         <div className="supportGrid">
-          {supportViews.map((view) => (
-            <article className="supportCard" key={view.title}>
+          {supportViews.map((view, index) => (
+            <article className="supportCard reveal" key={view.title} style={{ "--delay": `${index * 90}ms` } as CSSProperties}>
               <PhoneMock src={view.src} alt={view.alt} />
               <div className="supportCaption">
                 <h3>{view.title}</h3>
@@ -301,23 +322,26 @@ export default function Home() {
       </section>
 
       <section className="privacySection" id="privacy">
-        <div>
-          <p className="sectionLabel">Trust model</p>
+        <div className="privacyCopy reveal">
+          <span className="chapterLabel">Trust model</span>
           <h2>Neutral by design. Private by default.</h2>
           <p>
-            The app gives formulation guidance, not paid product placement. Droplet is built to stay independent because a recommendation tool cannot feel like another sales channel.
+            Droplet gives formulation guidance, not paid product placement. It is built to stay independent because a recommendation tool cannot feel like another sales channel.
           </p>
         </div>
-        <div className="trustGrid">
-          {trustItems.map((item) => (
-            <span key={item}>{item}</span>
-          ))}
+        <div className="trustPanel reveal">
+          <img src="/story-assets/trust-strip.svg" alt="" aria-hidden="true" />
+          <div className="trustGrid">
+            {trustItems.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="communityTeaser">
+      <section className="communityTeaser reveal">
         <div>
-          <p className="sectionLabel">Community</p>
+          <span className="chapterLabel">Community</span>
           <h2>A calmer place to compare decisions.</h2>
         </div>
         <p>
@@ -327,16 +351,16 @@ export default function Home() {
       </section>
 
       <section className="pricingSection" id="pricing">
-        <div className="sectionStack center">
-          <p className="sectionLabel">Pricing</p>
+        <div className="sectionIntro center reveal">
+          <span className="chapterLabel">Pricing</span>
           <h2>One wrong product can cost more than a year of clarity.</h2>
           <p>
             Every paid plan includes scans, full reports, routine intelligence, saved skin memory, and sync across iOS and Android.
           </p>
         </div>
         <div className="pricingGrid">
-          {plans.map((plan) => (
-            <article className={`priceCard ${plan.featured ? "featuredPlan" : ""}`} key={plan.name}>
+          {plans.map((plan, index) => (
+            <article className={`priceCard reveal ${plan.featured ? "featuredPlan" : ""}`} key={plan.name} style={{ "--delay": `${index * 80}ms` } as CSSProperties}>
               {plan.featured ? <span className="planBadge">Best value</span> : null}
               <h3>{plan.name}</h3>
               <div className="priceLine">
@@ -350,12 +374,13 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <p className="pricingNote">
+        <p className="pricingNote reveal">
           Cancel through the App Store or Google Play. Droplet does not use ads, sponsored ranking, or affiliate steering.
         </p>
       </section>
 
-      <section className="finalCta">
+      <section className="finalCta reveal">
+        <Image src="/story-assets/product-silhouettes.svg" alt="" width={760} height={210} aria-hidden="true" />
         <h2>Before the next bottle joins your routine, run the label through Droplet.</h2>
         <a className="button primary" href="#pricing">Try Droplet AI free</a>
       </section>

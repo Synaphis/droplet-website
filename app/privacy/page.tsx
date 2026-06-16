@@ -1,26 +1,39 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Droplet AI"
+  title: "Privacy Policy | Droplet AI",
+  description: "Privacy Policy for Droplet AI, including data use, sharing, retention, deletion, and user rights."
 };
 
 const dataGroups = [
   {
+    title: "Account and subscription",
+    copy: "Account identifiers, authentication details, device and app information, subscription status, purchase entitlement metadata, support requests, security signals, and sync metadata."
+  },
+  {
     title: "Product evidence",
-    copy: "Product photos, label images, ingredient lists, directions, product categories, scan outputs, and saved reports."
+    copy: "Product photos, label images, ingredient lists, directions, product categories, scan outputs, saved products, and generated reports."
   },
   {
     title: "Skin context",
-    copy: "Skin type, sensitivity, goals, allergies, avoid-list, age range, gender, climate context, and profile preferences."
+    copy: "Skin type, sensitivity, goals, allergies, avoid-list, age range, gender, climate context, routine preferences, and other profile details the user chooses to provide."
   },
   {
     title: "Routine memory",
-    copy: "Products in routines, reminder times, completed steps, skipped steps, adherence history, saved products, and notes."
+    copy: "Products in routines, reminder times, completed steps, skipped steps, adherence history, saved products, notes, and settings."
   },
   {
-    title: "Account operations",
-    copy: "Account identifiers, device and app information, subscription status, support requests, security signals, and sync metadata."
+    title: "App diagnostics",
+    copy: "Crash logs, performance data, feature usage, approximate device information, and reliability signals used to maintain and improve the service."
   }
+];
+
+const rights = [
+  "Access, correct, export, or delete eligible account, report, routine, and profile information.",
+  "Withdraw optional permissions such as camera, photo library, and notifications through device settings.",
+  "Request account deletion through the app or the public support page.",
+  "Opt out of marketing communications where applicable.",
+  "Appeal, object, restrict, or complain to a regulator where local privacy law provides those rights."
 ];
 
 export default function PrivacyPage() {
@@ -31,9 +44,16 @@ export default function PrivacyPage() {
         <p className="sectionLabel">Privacy policy</p>
         <h1>Private skincare decisions need a plain privacy posture.</h1>
         <p>
-          Droplet AI uses personal skin and routine context to generate scans, reports, and routine guidance. The product is designed around independence, user control, and a clear separation from advertising incentives.
+          Effective date: June 16, 2026. Droplet AI uses personal skin, product, and routine context to generate scans, reports, and routine guidance. This policy explains what information may be processed, why it is used, when it may be shared, and how users can request deletion or other privacy help.
         </p>
       </header>
+
+      <section className="legalSection">
+        <h2>Who this policy covers</h2>
+        <p>
+          This policy applies to Droplet AI websites, mobile applications, support channels, and related services. Droplet AI provides ingredient, formulation, routine, and profile-fit guidance for skincare products. It is not a medical device and does not provide medical diagnosis or treatment.
+        </p>
+      </section>
 
       <section className="legalSection">
         <h2>Information Droplet AI may use</h2>
@@ -53,37 +73,95 @@ export default function PrivacyPage() {
           <li>To create label scans, ingredient explanations, claim checks, risk summaries, and profile-aware verdicts.</li>
           <li>To place products into morning, evening, or night routines with relevant usage cautions.</li>
           <li>To remember saved products, past reactions, routine history, skipped products, and user preferences across supported devices.</li>
-          <li>To provide support, maintain reliability, detect abuse, manage subscriptions, and improve product safety.</li>
+          <li>To send reminders or notifications only when users enable them.</li>
+          <li>To provide support, maintain reliability, detect abuse, prevent fraud, manage subscriptions, and improve product safety.</li>
+          <li>To comply with applicable law, enforce terms, and respond to lawful requests.</li>
         </ul>
+      </section>
+
+      <section className="legalSection">
+        <h2>Permissions</h2>
+        <ul>
+          <li>Camera access is used to scan product labels and packaging when the user chooses to scan.</li>
+          <li>Photo library access is used only when the user chooses to upload or select an image.</li>
+          <li>Notifications are used for routine reminders and app updates when enabled by the user.</li>
+          <li>Users can change app permissions in iOS or Android device settings.</li>
+        </ul>
+      </section>
+
+      <section className="legalSection">
+        <h2>Sharing and service providers</h2>
+        <p>
+          Droplet AI may share information with service providers that help operate the app, such as cloud hosting, authentication, database storage, image processing, AI processing, analytics, crash reporting, customer support, and subscription entitlement services. These providers are allowed to process information only to provide services to Droplet AI, protect the service, or comply with law.
+        </p>
+        <p>
+          Droplet AI may also disclose information if required by law, to protect users or the service, during a business transfer, or with the user&apos;s direction or consent.
+        </p>
       </section>
 
       <section className="legalSection">
         <h2>Advertising and sponsorship</h2>
         <p>
-          Droplet AI does not sell personal skincare profile data for advertising. Droplet AI does not use sponsored ranking, affiliate steering, or brand-paid placement as the basis for product guidance.
+          Droplet AI does not sell personal skincare profile data for advertising. Droplet AI does not use sponsored ranking, affiliate steering, or brand-paid placement as the basis for product guidance. If this changes, the policy and user-facing disclosures will be updated before using personal data for that purpose.
         </p>
       </section>
 
       <section className="legalSection">
-        <h2>User controls</h2>
-        <ul>
-          <li>Users can delete scan reports, saved products, and routine data from inside the app where those controls are available.</li>
-          <li>Users can request account deletion and data deletion through support.</li>
-          <li>Users can choose not to save a product report after reviewing a scan.</li>
-          <li>Subscriptions are managed through the App Store or Google Play purchase flow.</li>
-        </ul>
+        <h2>AI processing</h2>
+        <p>
+          Droplet AI may process product photos, label text, profile details, and routine context through automated systems to generate reports and suggestions. Outputs can be incomplete or wrong, especially when labels are unclear, product information changes, or user context is missing. Users should review outputs before acting on them.
+        </p>
       </section>
 
       <section className="legalSection">
         <h2>Retention and deletion</h2>
         <p>
-          Droplet AI keeps information only as long as needed to operate user-facing features, provide support, satisfy legal or security obligations, and maintain reliable sync. Deletion requests remove eligible account, report, routine, and profile data unless retention is required for security, billing, legal, or dispute-resolution reasons.
+          Droplet AI keeps information only as long as needed to operate user-facing features, provide support, satisfy legal or security obligations, maintain reliable sync, and resolve disputes. Deletion requests remove eligible account, report, routine, profile, and product-photo data unless retention is required for security, billing, legal, fraud-prevention, or dispute-resolution reasons.
         </p>
       </section>
 
       <section className="legalSection">
-        <h2>Contact</h2>
-        <p>For privacy requests, contact the Droplet AI support team through the app or the support page.</p>
+        <h2>User controls and rights</h2>
+        <ul>
+          {rights.map((right) => (
+            <li key={right}>{right}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="legalSection">
+        <h2>Security</h2>
+        <p>
+          Droplet AI uses reasonable administrative, technical, and organizational safeguards designed to protect personal information. No internet or mobile service can guarantee perfect security, so users should keep account credentials and device access protected.
+        </p>
+      </section>
+
+      <section className="legalSection">
+        <h2>International transfers</h2>
+        <p>
+          Droplet AI and its service providers may process information in countries other than the user&apos;s country of residence. Where required, Droplet AI relies on appropriate safeguards for cross-border processing.
+        </p>
+      </section>
+
+      <section className="legalSection">
+        <h2>Children</h2>
+        <p>
+          Droplet AI is not directed to children under 13, or the age of digital consent where a higher age applies. If a parent or guardian believes a child provided personal information, they can contact support to request deletion.
+        </p>
+      </section>
+
+      <section className="legalSection">
+        <h2>Changes to this policy</h2>
+        <p>
+          Droplet AI may update this policy as the product, law, or platform requirements change. Material changes will be reflected by updating the effective date and, where appropriate, providing additional notice in the app or on the website.
+        </p>
+      </section>
+
+      <section className="legalSection">
+        <h2>Contact and deletion requests</h2>
+        <p>
+          For privacy requests, account deletion, or questions about this policy, use the public <a href="/support">Droplet AI support page</a> or the in-app support flow. Include the account email or account identifier when possible so the request can be verified.
+        </p>
       </section>
     </main>
   );

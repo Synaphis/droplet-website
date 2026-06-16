@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Support | Droplet AI"
+  title: "Support | Droplet AI",
+  description: "Public support page for Droplet AI users, including account deletion, billing, privacy, scan, report, and routine help."
 };
 
 const requests = [
@@ -35,6 +36,13 @@ export default function SupportPage() {
         </p>
       </header>
 
+      <section className="legalSection" id="contact">
+        <h2>Contact support</h2>
+        <p>
+          Use this public support page or the in-app support flow for scan issues, routine questions, billing guidance, privacy requests, and account deletion. When contacting support, include the email or account identifier connected to Droplet AI when possible so the request can be verified.
+        </p>
+      </section>
+
       <section className="legalSection">
         <h2>Common requests</h2>
         <div className="legalGrid">
@@ -61,6 +69,13 @@ export default function SupportPage() {
         <h2>Medical scope</h2>
         <p>
           Droplet AI can explain ingredients, claims, routine placement, and profile fit. It does not diagnose, treat, cure, or prevent skin conditions. Severe reactions, persistent irritation, prescription-product questions, pregnancy-related questions, or diagnosed skin conditions should be discussed with a qualified professional.
+        </p>
+      </section>
+
+      <section className="legalSection" id="deletion">
+        <h2>Account and data deletion</h2>
+        <p>
+          Users can request deletion of account data, scan reports, product photos, routine history, and skin profile details through in-app support or this public support destination. Deletion requests remove eligible data unless retention is required for security, billing, legal, fraud-prevention, or dispute-resolution reasons.
         </p>
       </section>
 

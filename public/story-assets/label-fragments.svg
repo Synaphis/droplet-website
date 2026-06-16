@@ -1,0 +1,22 @@
+<svg width="430" height="520" viewBox="0 0 430 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="98" y="55" width="210" height="318" rx="22" fill="#FAFAFA" stroke="#D6D3D1"/>
+  <rect x="122" y="91" width="92" height="11" rx="5.5" fill="#0C0A09"/>
+  <rect x="122" y="121" width="150" height="8" rx="4" fill="#D6D3D1"/>
+  <rect x="122" y="141" width="122" height="8" rx="4" fill="#D6D3D1"/>
+  <rect x="122" y="180" width="160" height="1" fill="#E7E5E4"/>
+  <rect x="122" y="209" width="138" height="8" rx="4" fill="#777169"/>
+  <rect x="122" y="231" width="98" height="8" rx="4" fill="#777169"/>
+  <rect x="122" y="253" width="126" height="8" rx="4" fill="#777169"/>
+  <rect x="122" y="292" width="160" height="1" fill="#E7E5E4"/>
+  <rect x="122" y="320" width="112" height="8" rx="4" fill="#D6D3D1"/>
+  <path d="M306 54C330 68 343 91 343 121C343 151 328 173 306 185" stroke="#A8A29E" stroke-width="2" stroke-dasharray="5 7"/>
+  <path d="M97 368C70 352 56 327 56 295C56 263 72 240 97 226" stroke="#A8A29E" stroke-width="2" stroke-dasharray="5 7"/>
+  <g font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="500">
+    <rect x="248" y="79" width="140" height="42" rx="21" fill="#FFFFFF" stroke="#E7E5E4"/>
+    <text x="269" y="105" fill="#0C0A09">front claim</text>
+    <rect x="31" y="243" width="134" height="42" rx="21" fill="#FFFFFF" stroke="#E7E5E4"/>
+    <text x="54" y="269" fill="#0C0A09">INCI list</text>
+    <rect x="176" y="386" width="170" height="42" rx="21" fill="#FFFFFF" stroke="#E7E5E4"/>
+    <text x="198" y="412" fill="#0C0A09">use directions</text>
+  </g>
+</svg>
