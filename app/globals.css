@@ -131,16 +131,9 @@ h3 {
 }
 
 .brandMark {
-  display: inline-grid;
   width: 34px;
   height: 34px;
-  place-items: center;
-  border: 1px solid var(--hairline-strong);
-  border-radius: 50% 50% 48% 48% / 58% 58% 42% 42%;
-  background: linear-gradient(to top, var(--ink) 0 39%, var(--surface-soft) 39% 100%);
-  color: var(--ink);
-  font-size: 12px;
-  font-weight: 650;
+  object-fit: contain;
 }
 
 .navLinks {

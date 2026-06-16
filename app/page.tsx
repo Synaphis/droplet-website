@@ -142,7 +142,7 @@ export default function Home() {
     <main>
       <nav className="nav" aria-label="Main navigation">
         <a className="brand" href="#top" aria-label="Droplet AI home">
-          <span className="brandMark" aria-hidden="true">23</span>
+          <Image className="brandMark" src="/logo-mark.png" alt="" width={64} height={64} aria-hidden="true" priority />
           <span>Droplet AI</span>
         </a>
         <div className="navLinks">
@@ -363,7 +363,7 @@ export default function Home() {
       <footer className="footer">
         <div>
           <a className="brand" href="#top" aria-label="Droplet AI home">
-            <span className="brandMark" aria-hidden="true">23</span>
+            <Image className="brandMark" src="/logo-mark.png" alt="" width={64} height={64} aria-hidden="true" />
             <span>Droplet AI</span>
           </a>
           <p>Ingredient and formulation guidance for calmer skincare decisions.</p>
