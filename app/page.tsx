@@ -189,7 +189,7 @@ export default function Home() {
           />
           <PhoneMock
             className="heroFloat"
-            src="/screens/phone-mockups/report-overview.png"
+            src="/screens/phone-mockups/routine-dashboard.png"
             alt="Droplet report overview with trust score and category scores."
             priority
           />
