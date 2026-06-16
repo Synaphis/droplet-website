@@ -7,91 +7,26 @@ type Phone = {
   priority?: boolean;
 };
 
+const pillars = [
+  {
+    title: "Checks the label",
+    copy: "Ingredient roles, formula signals, usage directions, and front-label claims are read together instead of treated as separate clues."
+  },
+  {
+    title: "Reads against you",
+    copy: "Sensitivity, goals, avoid-list, climate, history, and routine context shape the verdict so the same product can mean different things for different people."
+  },
+  {
+    title: "Turns advice into memory",
+    copy: "Reports, saved products, skipped steps, reactions, and adherence history become context for the next decision."
+  }
+];
+
 const formulaChecks = [
   "Ingredient roles and cautions",
-  "Claim support against formula evidence",
+  "Marketing claims compared with formula evidence",
   "Profile fit for sensitivity, acne tendency, goals, avoid-list, and climate",
   "Routine placement for morning, evening, and night"
-];
-
-const featureCards = [
-  {
-    title: "Formula, not front-label hope",
-    copy: "Droplet reads the ingredient list behind claims like gentle, brightening, fragrance-free, and pore care."
-  },
-  {
-    title: "Personal, not generic",
-    copy: "The same serum can land differently depending on sensitivity, allergies, skin goals, and what is already in the routine."
-  },
-  {
-    title: "Memory, not repeat mistakes",
-    copy: "Saved reports, skipped products, reactions, and completed routines become context for the next decision."
-  }
-];
-
-const routinePoints = [
-  "Morning, evening, and night routine steps",
-  "Application notes, categories, and reminders",
-  "Generated routines based on profile, climate, and past behavior",
-  "Completion history without guilt"
-];
-
-const trustItems = [
-  "No ads",
-  "No sponsored ranking",
-  "No affiliate steering",
-  "Delete reports and account data"
-];
-
-const plans = [
-  {
-    name: "Free trial",
-    price: "$0",
-    cadence: "7 days",
-    description: "Full access before the first payment. No card required.",
-    action: "Start free"
-  },
-  {
-    name: "Monthly",
-    price: "$9.99",
-    cadence: "per month",
-    description: "For people actively testing products, rebuilding routines, or comparing purchases.",
-    action: "Try monthly"
-  },
-  {
-    name: "Yearly",
-    price: "$79.99",
-    cadence: "per year",
-    description: "About $6.67 per month. A better fit if Droplet becomes your pre-purchase check.",
-    action: "Try yearly",
-    featured: true
-  }
-];
-
-const adherenceViews = [
-  {
-    src: "/screens/phone-mockups/adherence-overview.png",
-    alt: "Droplet adherence view with score, streak, last 30 days, and schedule."
-  },
-  {
-    src: "/screens/phone-mockups/adherence-explainer.png",
-    alt: "Droplet adherence explainer view with score details and recovery guidance."
-  },
-];
-
-const supportViews = [
-  {
-    title: "Notifications and account controls",
-    copy: "Reminder settings, account details, and subscription status live together so routine support is easy to adjust.",
-    src: "/screens/phone-mockups/account-subscription-reminders.png",
-    alt: "Droplet account, subscription, and reminder settings screen."
-  },
-  {
-    title: "Preferences that reduce friction",
-    copy: "Settings cover profile, routine reminders, privacy, and plan access so the app can fit real use.",
-    src: "/screens/phone-mockups/settings-preferences.png",
-    alt: "Droplet settings and preferences screen."
-  }
 ];
 
 const reportViews = [
@@ -121,10 +56,83 @@ const reportViews = [
   }
 ];
 
+const adherenceViews = [
+  {
+    src: "/screens/phone-mockups/adherence-overview.png",
+    alt: "Droplet adherence view with score, streak, last 30 days, and schedule."
+  },
+  {
+    src: "/screens/phone-mockups/adherence-explainer.png",
+    alt: "Droplet adherence explainer view with score details and recovery guidance."
+  }
+];
+
+const supportViews = [
+  {
+    title: "Reminder control",
+    copy: "Notification timing, plan status, and account controls live together so routine support can be adjusted without digging.",
+    src: "/screens/phone-mockups/account-subscription-reminders.png",
+    alt: "Droplet account, subscription, and reminder settings screen."
+  },
+  {
+    title: "Preference memory",
+    copy: "Profile, routine, privacy, and plan settings make the app fit the user instead of forcing a generic skincare flow.",
+    src: "/screens/phone-mockups/settings-preferences.png",
+    alt: "Droplet settings and preferences screen."
+  }
+];
+
+const trustItems = [
+  "No ads",
+  "No sponsored ranking",
+  "No affiliate steering",
+  "Delete reports and account data"
+];
+
+const plans = [
+  {
+    name: "Free trial",
+    price: "$0",
+    cadence: "7 days",
+    description: "Full access before the first payment. Built for a real product check, not a locked preview.",
+    action: "Start free"
+  },
+  {
+    name: "Monthly",
+    price: "$9.99",
+    cadence: "per month",
+    description: "Best when you are actively testing products, rebuilding a routine, or comparing purchases.",
+    action: "Try monthly"
+  },
+  {
+    name: "Yearly",
+    price: "$79.99",
+    cadence: "per year",
+    description: "About $6.67 per month for the person who wants Droplet before every skincare decision.",
+    action: "Try yearly",
+    featured: true
+  }
+];
+
+const questions = [
+  "Will this irritate me?",
+  "Is this claim real?",
+  "Where does it fit in my routine?",
+  "What did I use last time?"
+];
+
 function PhoneMock({ src, alt, className = "", priority = false }: Phone) {
   return (
     <div className={`phoneMock ${className}`}>
-      <Image className="phoneMockImage" src={src} alt={alt} width={897} height={1900} priority={priority} />
+      <Image
+        className="phoneMockImage"
+        src={src}
+        alt={alt}
+        width={897}
+        height={1900}
+        priority={priority}
+        loading={priority ? undefined : "eager"}
+      />
     </div>
   );
 }
@@ -139,19 +147,20 @@ export default function Home() {
         </a>
         <div className="navLinks">
           <a href="#scan">Scan</a>
+          <a href="#reports">Reports</a>
           <a href="#routine">Routine</a>
-          <a href="#privacy">Privacy</a>
-          <a href="#pricing">Pricing</a>
+          <a href="/community">Community</a>
+          <a href="/privacy">Privacy</a>
         </div>
-        <a className="navCta" href="#download">Try free</a>
+        <a className="navCta" href="#pricing">Try free</a>
       </nav>
 
       <section className="hero" id="top">
         <div className="heroCopy">
           <p className="kicker">Private skincare intelligence</p>
-          <h1>Know what belongs on your skin.</h1>
+          <h1>Check the product before your skin has to.</h1>
           <p className="lede">
-            Droplet scans skincare labels, explains the formula, checks claims, and turns the verdict into a routine you can act on.
+            Droplet AI scans skincare labels, explains the formula, checks the claims, and remembers what fits your routine so every purchase starts with evidence instead of hope.
           </p>
           <div className="heroActions" id="download">
             <a className="storeButton primary" href="#pricing" aria-label="Try Droplet AI on the App Store">
@@ -180,27 +189,41 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="beliefStrip" aria-label="Droplet promise">
-        <p>The front label makes the promise. Droplet checks the formula behind it.</p>
+      <section className="questionStrip" aria-label="Common skincare questions">
+        {questions.map((question) => (
+          <span key={question}>{question}</span>
+        ))}
+      </section>
+
+      <section className="manifesto">
+        <p>
+          Skincare advice is everywhere. Personal evidence is harder to find. Droplet is the quiet check between a persuasive label and your actual skin.
+        </p>
+      </section>
+
+      <section className="pillarSection" aria-label="How Droplet helps">
+        {pillars.map((pillar) => (
+          <article className="featureCard" key={pillar.title}>
+            <h3>{pillar.title}</h3>
+            <p>{pillar.copy}</p>
+          </article>
+        ))}
       </section>
 
       <section className="decisionSection" id="scan">
         <div className="sectionStack">
-          <h2>Scan before you buy or layer.</h2>
+          <p className="sectionLabel">Label-first scan</p>
+          <h2>Start with the product in your hand.</h2>
           <p>
-            Ingredient lists are accurate but hard to decode. Droplet turns the product in your hand into a report with reasons, cautions, and next steps.
+            The camera view keeps the label centered so the report begins from product evidence: ingredients, directions, claims, category, and the context needed to interpret them.
           </p>
         </div>
         <div className="decisionGrid">
           <article className="scanPanel">
             <PhoneMock src="/screens/phone-mockups/camera-scan.png" alt="Droplet AI camera scanner framing a skincare product label." />
-            <div>
-              <h3>Label-first scanning</h3>
-              <p>The camera view keeps the label centered so the report starts from product evidence, not generic internet advice.</p>
-            </div>
           </article>
           <article className="checkListPanel">
-            <h3>What Droplet checks</h3>
+            <h3>What gets reviewed</h3>
             <ul>
               {formulaChecks.map((item) => (
                 <li key={item}>{item}</li>
@@ -212,9 +235,10 @@ export default function Home() {
 
       <section className="reportSection" id="reports">
         <div className="reportCopy">
-          <h2>A report that explains itself.</h2>
+          <p className="sectionLabel">Explainability</p>
+          <h2>A report that shows its work.</h2>
           <p>
-            Droplet avoids mystery scores. Every verdict shows why the formula may fit, where caution belongs, and what the user should do next.
+            Droplet avoids mystery scores. Every verdict shows why the formula may fit, where caution belongs, which claims are supported, and what the user should do next.
           </p>
         </div>
         <div className="reportGallery" aria-label="Report screenshots">
@@ -224,26 +248,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="featureBand" id="trust">
-        {featureCards.map((feature) => (
-          <article className="featureCard" key={feature.title}>
-            <h3>{feature.title}</h3>
-            <p>{feature.copy}</p>
-          </article>
-        ))}
-      </section>
-
       <section className="routineSection" id="routine">
         <div className="routineCopy">
+          <p className="sectionLabel">Routine memory</p>
           <h2>Your next routine should remember your last one.</h2>
           <p>
-            A routine is timing, order, tolerance, repetition, and memory. Droplet connects the scan to what happens tonight and next week.
+            Droplet connects the product verdict to what happens tonight and next week: timing, order, tolerance, reminders, and the history that keeps mistakes from repeating.
           </p>
-          <ul className="routineList">
-            {routinePoints.map((point) => (
-              <li key={point}>{point}</li>
-            ))}
-          </ul>
         </div>
         <div className="routinePhones">
           <PhoneMock src="/screens/phone-mockups/routine-dashboard.png" alt="Droplet routine dashboard with reminders, products, and AI routine controls." />
@@ -253,9 +264,10 @@ export default function Home() {
 
       <section className="adherenceSection" id="adherence">
         <div className="sectionStack center">
+          <p className="sectionLabel">No guilt loops</p>
           <h2>Adherence that helps users recover.</h2>
           <p>
-            Droplet treats missed steps as context, not failure. The adherence views keep the droplet score, streak, calendar, and schedule visible without shaming the user, then explain what changed, why the score moved, and how to recover the routine without guesswork.
+            Droplet treats missed steps as context, not failure. The adherence views keep the score, streak, calendar, and schedule visible, then explain what changed and how to recover the routine without guesswork.
           </p>
         </div>
         <div className="adherenceGrid">
@@ -269,9 +281,10 @@ export default function Home() {
 
       <section className="supportSection" id="supporting-views">
         <div className="sectionStack">
+          <p className="sectionLabel">Control surface</p>
           <h2>The smaller controls make the product easier to live with.</h2>
           <p>
-            Reminders, settings, account, and plan controls are part of the product story because they make routine intelligence usable every day.
+            Reminders, settings, account, and plan controls matter because skincare routines are daily systems, not one-time scans.
           </p>
         </div>
         <div className="supportGrid">
@@ -289,9 +302,10 @@ export default function Home() {
 
       <section className="privacySection" id="privacy">
         <div>
+          <p className="sectionLabel">Trust model</p>
           <h2>Neutral by design. Private by default.</h2>
           <p>
-            Droplet works because users can trust the incentive model. The app gives formulation guidance, not paid product placement.
+            The app gives formulation guidance, not paid product placement. Droplet is built to stay independent because a recommendation tool cannot feel like another sales channel.
           </p>
         </div>
         <div className="trustGrid">
@@ -301,8 +315,20 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="communityTeaser">
+        <div>
+          <p className="sectionLabel">Community</p>
+          <h2>A calmer place to compare decisions.</h2>
+        </div>
+        <p>
+          Droplet community is for product checks, routine patterns, and reaction notes without sponsored rankings or viral pressure.
+        </p>
+        <a className="button secondary" href="/community">Visit community</a>
+      </section>
+
       <section className="pricingSection" id="pricing">
         <div className="sectionStack center">
+          <p className="sectionLabel">Pricing</p>
           <h2>One wrong product can cost more than a year of clarity.</h2>
           <p>
             Every paid plan includes scans, full reports, routine intelligence, saved skin memory, and sync across iOS and Android.
@@ -329,6 +355,11 @@ export default function Home() {
         </p>
       </section>
 
+      <section className="finalCta">
+        <h2>Before the next bottle joins your routine, run the label through Droplet.</h2>
+        <a className="button primary" href="#pricing">Try Droplet AI free</a>
+      </section>
+
       <footer className="footer">
         <div>
           <a className="brand" href="#top" aria-label="Droplet AI home">
@@ -337,11 +368,12 @@ export default function Home() {
           </a>
           <p>Ingredient and formulation guidance for calmer skincare decisions.</p>
         </div>
-        <nav aria-label="Legal links">
+        <nav aria-label="Footer links">
+          <a href="/community">Community</a>
+          <a href="/support">Support</a>
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
           <a href="/medical-disclaimer">Medical disclaimer</a>
-          <a href="/support">Support</a>
         </nav>
       </footer>
     </main>
