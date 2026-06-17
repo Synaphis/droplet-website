@@ -143,13 +143,13 @@ function PhoneMock({ src, alt, className = "", priority = false }: Phone) {
   );
 }
 
-function AppStoreCTA({ className = "" }: { className?: string }) {
+function AppStoreCTA({ className = "", label = "Try Droplet free" }: { className?: string; label?: string }) {
   return (
     <a className={`appStoreLink ${className}`} href="#pricing" aria-label="Try Droplet AI free on the App Store">
       <svg className="appStoreIcon" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M16.7 12.7c0-2.2 1.8-3.2 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8-.7 0-1.8-.8-2.9-.8-1.5 0-2.9.9-3.7 2.2-1.6 2.8-.4 6.9 1.1 9.1.8 1.1 1.7 2.3 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.2 0 2-1.1 2.8-2.2.9-1.3 1.2-2.5 1.2-2.6 0-.1-2.8-1.1-2.8-3.8ZM14.5 6.2c.6-.8 1.1-1.8 1-2.9-1 .1-2.1.7-2.8 1.5-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.6 2.8-1.4Z" />
       </svg>
-      <span>Try free on App Store</span>
+      <span>{label}</span>
     </a>
   );
 }
@@ -181,7 +181,7 @@ export default function Home() {
           </p>
           <div className="heroActions heroEnter heroEnterFour" id="download">
             <AppStoreCTA />
-            <a className="button secondary" href="#reports">See how reports work</a>
+            <a className="sampleReportLink" href="#reports">See a sample report</a>
           </div>
         </div>
         <div className="heroVisual heroEnter heroEnterFive" aria-label="Droplet app screenshots">
@@ -388,7 +388,7 @@ export default function Home() {
             <span>Droplet AI</span>
           </a>
           <p>Ingredient and formulation guidance for calmer skincare decisions.</p>
-          <AppStoreCTA className="footerStoreLink" />
+          <AppStoreCTA className="footerStoreLink" label="Try free on App Store" />
         </div>
         <nav aria-label="Footer links">
           <a href="/community">Community</a>

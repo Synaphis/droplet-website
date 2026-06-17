@@ -13,7 +13,7 @@
   --dark: #0c0a09;
   --dark-elevated: #1c1917;
   --radius: 16px;
-  --control-radius: 12px;
+  --control-radius: 6px;
   --max: 1200px;
   --section: clamp(76px, 9vw, 124px);
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -254,8 +254,9 @@ h3 {
 }
 
 .heroActions {
+  align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 18px;
   margin-top: 32px;
 }
 
@@ -269,6 +270,25 @@ h3 {
   border: 1px solid var(--ink-soft);
   background: var(--ink-soft);
   color: white;
+}
+
+.sampleReportLink {
+  color: var(--ink-soft);
+  font-size: 15px;
+  font-weight: 560;
+  text-decoration: underline;
+  text-decoration-color: var(--hairline-strong);
+  text-underline-offset: 5px;
+  transition: color 180ms ease, text-decoration-color 180ms ease, transform 160ms var(--ease-out);
+}
+
+.sampleReportLink:hover {
+  color: var(--ink);
+  text-decoration-color: var(--ink);
+}
+
+.sampleReportLink:active {
+  transform: scale(0.98);
 }
 
 .appStoreIcon {
