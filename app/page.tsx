@@ -143,6 +143,15 @@ function PhoneMock({ src, alt, className = "", priority = false }: Phone) {
   );
 }
 
+function AppStoreCTA({ className = "" }: { className?: string }) {
+  return (
+    <a className={`appStoreLink ${className}`} href="#pricing" aria-label="Try Droplet AI free on the App Store">
+      <span>iOS app</span>
+      <strong>Try free on App Store</strong>
+    </a>
+  );
+}
+
 export default function Home() {
   return (
     <main>
@@ -170,14 +179,8 @@ export default function Home() {
             Droplet AI scans the product in your hand, explains the formula behind the promise, and turns the decision into a routine your skin can actually live with.
           </p>
           <div className="heroActions heroEnter heroEnterFour" id="download">
-            <a className="storeButton primary" href="#pricing" aria-label="Try Droplet AI on the App Store">
-              <span>Try free on</span>
-              <strong>App Store</strong>
-            </a>
-            <a className="storeButton secondary" href="#pricing" aria-label="Try Droplet AI on Google Play">
-              <span>Get it on</span>
-              <strong>Google Play</strong>
-            </a>
+            <AppStoreCTA />
+            <a className="button secondary" href="#reports">See how reports work</a>
           </div>
         </div>
         <div className="heroVisual heroEnter heroEnterFive" aria-label="Droplet app screenshots">
@@ -355,7 +358,7 @@ export default function Home() {
           <span className="chapterLabel">Pricing</span>
           <h2>One wrong product can cost more than a year of clarity.</h2>
           <p>
-            Every paid plan includes scans, full reports, routine intelligence, saved skin memory, and sync across iOS and Android.
+            Every paid plan includes scans, full reports, routine intelligence, saved skin memory, and sync for the Droplet iOS app.
           </p>
         </div>
         <div className="pricingGrid">
@@ -375,7 +378,7 @@ export default function Home() {
           ))}
         </div>
         <p className="pricingNote reveal">
-          Cancel through the App Store or Google Play. Droplet does not use ads, sponsored ranking, or affiliate steering.
+          Cancel through your App Store subscription settings. Droplet does not use ads, sponsored ranking, or affiliate steering.
         </p>
       </section>
 
@@ -392,6 +395,7 @@ export default function Home() {
             <span>Droplet AI</span>
           </a>
           <p>Ingredient and formulation guidance for calmer skincare decisions.</p>
+          <AppStoreCTA className="footerStoreLink" />
         </div>
         <nav aria-label="Footer links">
           <a href="/community">Community</a>

@@ -85,7 +85,7 @@ export default function PrivacyPage() {
           <li>Camera access is used to scan product labels and packaging when the user chooses to scan.</li>
           <li>Photo library access is used only when the user chooses to upload or select an image.</li>
           <li>Notifications are used for routine reminders and app updates when enabled by the user.</li>
-          <li>Users can change app permissions in iOS or Android device settings.</li>
+          <li>Users can change app permissions in iOS device settings.</li>
         </ul>
       </section>
 

@@ -38,8 +38,8 @@ export default function TermsPage() {
           <li>The free trial provides full access for 7 days unless otherwise shown at purchase.</li>
           <li>The monthly plan is $9.99 per month unless a different price is shown in the store checkout.</li>
           <li>The yearly plan is $79.99 per year unless a different price is shown in the store checkout.</li>
-          <li>Subscriptions, cancellation, renewal, refunds, taxes, and billing disputes are handled through the App Store or Google Play account that started the subscription.</li>
-          <li>Deleting the app does not automatically cancel a subscription. Users must cancel through the relevant app store.</li>
+          <li>Subscriptions, cancellation, renewal, refunds, taxes, and billing disputes are handled through the Apple ID that started the App Store subscription.</li>
+          <li>Deleting the app does not automatically cancel a subscription. Users must cancel through App Store subscription settings.</li>
         </ul>
       </section>
 

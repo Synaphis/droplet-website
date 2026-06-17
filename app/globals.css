@@ -151,7 +151,7 @@ h3 {
 
 .navCta,
 .button,
-.storeButton {
+.appStoreLink {
   border-radius: var(--control-radius);
   font-weight: 560;
   letter-spacing: 0;
@@ -192,7 +192,7 @@ h3 {
 
 .navCta:active,
 .button:active,
-.storeButton:active {
+.appStoreLink:active {
   transform: scale(0.97);
 }
 
@@ -270,26 +270,58 @@ h3 {
   margin-top: 32px;
 }
 
-.storeButton {
+.appStoreLink {
+  position: relative;
   display: inline-grid;
-  min-width: 154px;
-  min-height: 58px;
-  justify-content: center;
-  padding: 10px 18px;
+  min-width: 242px;
+  min-height: 62px;
+  align-content: center;
+  gap: 4px;
+  padding: 12px 52px 12px 18px;
+  border: 1px solid var(--ink-soft);
+  background: var(--ink-soft);
+  color: white;
 }
 
-.storeButton span {
+.appStoreLink::after {
+  content: ">";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  color: currentColor;
+  font-size: 20px;
+  font-weight: 420;
+  transform: translateY(-50%);
+  transition: transform 180ms var(--ease-out);
+}
+
+.appStoreLink:hover::after {
+  transform: translate(3px, -50%);
+}
+
+.appStoreLink span {
+  color: rgb(255 255 255 / 0.66);
   font-size: 12px;
+  font-weight: 560;
   line-height: 1;
 }
 
-.storeButton strong {
-  font-size: 18px;
-  line-height: 1.1;
+.appStoreLink strong {
+  font-size: 17px;
+  font-weight: 620;
+  line-height: 1.12;
 }
 
-.storeButton.secondary {
-  background: rgb(255 255 255 / 0.42);
+.footerStoreLink {
+  min-width: min(100%, 250px);
+  margin-top: 22px;
+  border-color: var(--hairline-strong);
+  background: transparent;
+  color: var(--ink);
+}
+
+.footerStoreLink span {
+  color: var(--muted);
 }
 
 .heroVisual {

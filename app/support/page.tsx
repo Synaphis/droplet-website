@@ -16,7 +16,7 @@ const requests = [
   },
   {
     title: "Account and billing",
-    copy: "Find guidance for App Store or Google Play subscriptions, trial questions, cancellation, account access, and plan status."
+    copy: "Find guidance for App Store subscriptions, trial questions, cancellation, account access, and plan status."
   },
   {
     title: "Privacy and deletion",
@@ -61,7 +61,7 @@ export default function SupportPage() {
           <li>Include the product name, brand, category, and a short description of what looked wrong or confusing.</li>
           <li>For scan issues, keep the original label photo or product packaging available when possible.</li>
           <li>For routine issues, describe the morning, evening, or night step that is unclear.</li>
-          <li>For billing, manage cancellation and refunds through the App Store or Google Play account that started the subscription.</li>
+          <li>For billing, manage cancellation and refunds through the Apple ID that started the App Store subscription.</li>
         </ul>
       </section>
 
