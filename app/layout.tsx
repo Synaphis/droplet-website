@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "Droplet AI",
     description:
       "Private skincare scanner and routine intelligence for calmer product decisions.",
-    images: [{ url: "/logo.png", width: 800, height: 800, alt: "Droplet AI logo" }]
+    images: [{ url: "/logo-2.png", width: 800, height: 800, alt: "Droplet AI logo" }]
   }
 };
 
