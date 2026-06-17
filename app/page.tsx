@@ -279,8 +279,10 @@ export default function Home() {
           </div>
         </div>
         <div className="routinePhones reveal">
-          <PhoneMock className="routinePrimary" src="/screens/phone-mockups/routine-dashboard.png" alt="Droplet routine dashboard with reminders, products, and AI routine controls." />
-          <PhoneMock className="routineSecondary" src="/screens/phone-mockups/ai-routine-generating.png" alt="Droplet generated routine screens shaped by user profile and history." />
+          <PhoneMock className="routinePrimary" src="/screens/phone-mockups/routine-1.png" alt="Droplet routine dashboard with reminders, products, and AI routine controls." />
+          <PhoneMock className="routineSecondary" src="/screens/phone-mockups/routine-2.png" alt="Droplet generated routine screens shaped by user profile and history." />
+          <PhoneMock className="routineSecondary" src="/screens/phone-mockups/routine-3.png" alt="Droplet generated routine screens shaped by user profile and history 1." />
+          <PhoneMock className="routineSecondary" src="/screens/phone-mockups/routine-4.png" alt="Droplet generated routine screens shaped by user profile and history 2." />
         </div>
       </section>
 
