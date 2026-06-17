@@ -260,57 +260,35 @@ h3 {
 }
 
 .appStoreLink {
-  position: relative;
-  display: inline-grid;
-  min-width: 242px;
-  min-height: 62px;
-  align-content: center;
-  gap: 4px;
-  padding: 12px 52px 12px 18px;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 16px;
   border: 1px solid var(--ink-soft);
   background: var(--ink-soft);
   color: white;
 }
 
-.appStoreLink::after {
-  content: ">";
-  position: absolute;
-  right: 18px;
-  top: 50%;
-  color: currentColor;
-  font-size: 20px;
-  font-weight: 420;
-  transform: translateY(-50%);
-  transition: transform 180ms var(--ease-out);
-}
-
-.appStoreLink:hover::after {
-  transform: translate(3px, -50%);
+.appStoreIcon {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+  fill: currentColor;
 }
 
 .appStoreLink span {
-  color: rgb(255 255 255 / 0.66);
-  font-size: 12px;
-  font-weight: 560;
+  font-size: 15px;
+  font-weight: 620;
   line-height: 1;
 }
 
-.appStoreLink strong {
-  font-size: 17px;
-  font-weight: 620;
-  line-height: 1.12;
-}
-
 .footerStoreLink {
-  min-width: min(100%, 250px);
   margin-top: 22px;
   border-color: var(--hairline-strong);
   background: transparent;
   color: var(--ink);
-}
-
-.footerStoreLink span {
-  color: var(--muted);
 }
 
 .heroVisual {
