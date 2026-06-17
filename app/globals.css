@@ -211,8 +211,7 @@ h3 {
   max-width: 680px;
 }
 
-.heroKicker,
-.chapterLabel,
+.sectionLabel,
 .planBadge {
   width: max-content;
   border-radius: 10px;
@@ -224,19 +223,9 @@ h3 {
   line-height: 1.4;
 }
 
-.heroKicker,
-.chapterLabel {
+.sectionLabel {
   display: inline-flex;
   padding: 6px 10px;
-}
-
-.heroKicker {
-  margin-bottom: 24px;
-}
-
-.chapterLabel.dark {
-  background: var(--dark-elevated);
-  color: var(--muted-soft);
 }
 
 .lede,
@@ -422,7 +411,6 @@ h3 {
   text-align: center;
 }
 
-.sectionIntro.center .chapterLabel,
 .sectionIntro.center h2,
 .sectionIntro.center p {
   margin-inline: auto;

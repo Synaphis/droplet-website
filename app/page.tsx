@@ -173,7 +173,6 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="heroCopy">
-          <p className="heroKicker heroEnter heroEnterOne">Private skincare intelligence</p>
           <h1 className="heroEnter heroEnterTwo">Before it touches your skin, check the label.</h1>
           <p className="lede heroEnter heroEnterThree">
             Droplet AI scans the product in your hand, explains the formula behind the promise, and turns the decision into a routine your skin can actually live with.
@@ -219,7 +218,6 @@ export default function Home() {
 
       <section className="scanStory" id="scan">
         <div className="sectionIntro reveal">
-          <span className="chapterLabel">Label-first scan</span>
           <h2>Start with the product in your hand.</h2>
           <p>
             The camera keeps the label centered so the report begins from evidence: ingredients, directions, claims, category, and the context needed to interpret them.
@@ -251,7 +249,6 @@ export default function Home() {
 
       <section className="reportSection" id="reports">
         <div className="reportCopy reveal">
-          <span className="chapterLabel dark">Explainability</span>
           <h2>A report that shows its work.</h2>
           <p>
             Droplet avoids mystery scores. Every verdict shows why the formula may fit, where caution belongs, which claims are supported, and what the user should do next.
@@ -269,7 +266,6 @@ export default function Home() {
 
       <section className="routineSection" id="routine">
         <div className="routineCopy reveal">
-          <span className="chapterLabel">From report to routine</span>
           <h2>Your next routine should remember your last one.</h2>
           <p>
             Buying the product is only half the decision. Droplet carries the verdict into timing, order, tolerance, reminders, and history so advice becomes something usable tonight.
@@ -288,7 +284,6 @@ export default function Home() {
 
       <section className="adherenceSection" id="adherence">
         <div className="sectionIntro center reveal">
-          <span className="chapterLabel">Adherence without shame</span>
           <h2>Missed steps become context, not failure.</h2>
           <p>
             The adherence view keeps the droplet score, streak, calendar, and schedule visible, while the explainer shows what changed, why the score moved, and how to recover the routine without guilt or guesswork.
@@ -305,7 +300,6 @@ export default function Home() {
 
       <section className="controlSection" id="supporting-views">
         <div className="sectionIntro reveal">
-          <span className="chapterLabel">Control and privacy</span>
           <h2>The smaller controls make Droplet easier to trust.</h2>
           <p>
             Reminders, settings, profile preferences, account controls, and plan details matter because skincare routines are daily systems, not one-time scans.
@@ -326,7 +320,6 @@ export default function Home() {
 
       <section className="privacySection" id="privacy">
         <div className="privacyCopy reveal">
-          <span className="chapterLabel">Trust model</span>
           <h2>Neutral by design. Private by default.</h2>
           <p>
             Droplet gives formulation guidance, not paid product placement. It is built to stay independent because a recommendation tool cannot feel like another sales channel.
@@ -344,7 +337,6 @@ export default function Home() {
 
       <section className="communityTeaser reveal">
         <div>
-          <span className="chapterLabel">Community</span>
           <h2>A calmer place to compare decisions.</h2>
         </div>
         <p>
@@ -355,7 +347,6 @@ export default function Home() {
 
       <section className="pricingSection" id="pricing">
         <div className="sectionIntro center reveal">
-          <span className="chapterLabel">Pricing</span>
           <h2>One wrong product can cost more than a year of clarity.</h2>
           <p>
             Every paid plan includes scans, full reports, routine intelligence, saved skin memory, and sync for the Droplet iOS app.
