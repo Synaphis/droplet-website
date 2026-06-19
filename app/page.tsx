@@ -69,6 +69,33 @@ const routineNotes = [
   "Uses history so the next decision is not a reset."
 ];
 
+const routineSlides = [
+  {
+    title: "Routine generated from context",
+    copy: "Droplet starts with profile, climate, goals, and saved products so the routine is not a generic template.",
+    src: "/screens/phone-mockups/routine-1.png",
+    alt: "Droplet AI generated routine overview shaped by profile and context."
+  },
+  {
+    title: "Reasoning stays visible",
+    copy: "Each recommendation keeps the why close, so users can understand the routine instead of blindly following it.",
+    src: "/screens/phone-mockups/routine-2.png",
+    alt: "Droplet AI routine recommendation with explanation and product context."
+  },
+  {
+    title: "Steps placed in order",
+    copy: "Morning and evening products are sequenced with timing, order, and tolerance in mind.",
+    src: "/screens/phone-mockups/routine-3.png",
+    alt: "Droplet routine steps arranged into a usable skincare order."
+  },
+  {
+    title: "Routine becomes memory",
+    copy: "Saved steps, skipped products, and completion history become context for the next scan.",
+    src: "/screens/phone-mockups/routine-4.png",
+    alt: "Droplet routine memory and guidance screen for ongoing skincare decisions."
+  }
+];
+
 const adherenceViews = [
   {
     src: "/screens/phone-mockups/adherence-overview.png",
@@ -143,13 +170,21 @@ function PhoneMock({ src, alt, className = "", priority = false }: Phone) {
   );
 }
 
-function AppStoreCTA({ className = "", label = "Try Droplet free" }: { className?: string; label?: string }) {
+function MobileCTA({ className = "", label = "Try Droplet free" }: { className?: string; label?: string }) {
   return (
-    <a className={`appStoreLink ${className}`} href="#pricing" aria-label="Try Droplet AI free on the App Store">
-      <svg className="appStoreIcon" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M16.7 12.7c0-2.2 1.8-3.2 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8-.7 0-1.8-.8-2.9-.8-1.5 0-2.9.9-3.7 2.2-1.6 2.8-.4 6.9 1.1 9.1.8 1.1 1.7 2.3 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.2 0 2-1.1 2.8-2.2.9-1.3 1.2-2.5 1.2-2.6 0-.1-2.8-1.1-2.8-3.8ZM14.5 6.2c.6-.8 1.1-1.8 1-2.9-1 .1-2.1.7-2.8 1.5-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.6 2.8-1.4Z" />
-      </svg>
+    <a className={`mobileCta ${className}`} href="#pricing" aria-label="Try Droplet AI free">
       <span>{label}</span>
+      <span className="platformMarks" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M16.7 12.7c0-2.2 1.8-3.2 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8-.7 0-1.8-.8-2.9-.8-1.5 0-2.9.9-3.7 2.2-1.6 2.8-.4 6.9 1.1 9.1.8 1.1 1.7 2.3 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.2 0 2-1.1 2.8-2.2.9-1.3 1.2-2.5 1.2-2.6 0-.1-2.8-1.1-2.8-3.8ZM14.5 6.2c.6-.8 1.1-1.8 1-2.9-1 .1-2.1.7-2.8 1.5-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.6 2.8-1.4Z" />
+        </svg>
+        <svg viewBox="0 0 24 24">
+          <path d="M4.4 3.2c-.3.3-.4.7-.4 1.2v15.2c0 .5.1.9.4 1.2l8.7-8.8-8.7-8.8Z" />
+          <path d="m14.4 10.7 2.2-2.2L6.1 2.6c-.4-.2-.8-.2-1.1 0l9.4 8.1Z" />
+          <path d="m14.4 13.3-9.4 8.1c.3.2.7.2 1.1 0l10.5-5.9-2.2-2.2Z" />
+          <path d="m18.1 9.4-2.4 2.6 2.4 2.6 1.8-1c.8-.5.8-1.6 0-2.1l-1.8-1.1Z" />
+        </svg>
+      </span>
     </a>
   );
 }
@@ -180,7 +215,7 @@ export default function Home() {
             Droplet AI scans the product in your hand, explains the formula behind the promise, and turns the decision into a routine your skin can actually live with.
           </p>
           <div className="heroActions heroEnter heroEnterFour" id="download">
-            <AppStoreCTA />
+            <MobileCTA />
             <a className="sampleReportLink" href="#reports">See a sample report</a>
           </div>
         </div>
@@ -278,11 +313,20 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="routinePhones reveal">
-          <PhoneMock className="routinePrimary" src="/screens/phone-mockups/routine-1.png" alt="Droplet routine dashboard with reminders, products, and AI routine controls." />
-          <PhoneMock className="routineSecondary" src="/screens/phone-mockups/routine-2.png" alt="Droplet generated routine screens shaped by user profile and history." />
-          <PhoneMock className="routineSecondary" src="/screens/phone-mockups/routine-3.png" alt="Droplet generated routine screens shaped by user profile and history 1." />
-          <PhoneMock className="routineSecondary" src="/screens/phone-mockups/routine-4.png" alt="Droplet generated routine screens shaped by user profile and history 2." />
+        <div className="routineStory reveal" aria-label="AI generated routine walkthrough">
+          <div className="routineProgress" aria-hidden="true" />
+          <div className="routineSlides">
+            {routineSlides.map((slide, index) => (
+              <article className="routineSlide" key={slide.src} style={{ "--slide": index } as CSSProperties}>
+                <div className="routineSlideCopy">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{slide.title}</h3>
+                  <p>{slide.copy}</p>
+                </div>
+                <PhoneMock src={slide.src} alt={slide.alt} />
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -353,7 +397,7 @@ export default function Home() {
         <div className="sectionIntro center reveal">
           <h2>One wrong product can cost more than a year of clarity.</h2>
           <p>
-            Every paid plan includes scans, full reports, routine intelligence, saved skin memory, and sync for the Droplet iOS app.
+            Every paid plan includes scans, full reports, routine intelligence, saved skin memory, and sync across iOS and Android.
           </p>
         </div>
         <div className="pricingGrid">
@@ -373,7 +417,7 @@ export default function Home() {
           ))}
         </div>
         <p className="pricingNote reveal">
-          Cancel through your App Store subscription settings. Droplet does not use ads, sponsored ranking, or affiliate steering.
+          Cancel through the App Store or Google Play. Droplet does not use ads, sponsored ranking, or affiliate steering.
         </p>
       </section>
 
@@ -390,7 +434,9 @@ export default function Home() {
             <span>Droplet AI</span>
           </a>
           <p>Ingredient and formulation guidance for calmer skincare decisions.</p>
-          <AppStoreCTA className="footerStoreLink" label="Try free on App Store" />
+          <p className="storeAvailability">
+            Available on <a href="#pricing">App Store</a> and <a href="#pricing">Google Play</a>
+          </p>
         </div>
         <nav aria-label="Footer links">
           <a href="/community">Community</a>

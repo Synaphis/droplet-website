@@ -151,7 +151,7 @@ h3 {
 
 .navCta,
 .button,
-.appStoreLink {
+.mobileCta {
   border-radius: var(--control-radius);
   font-weight: 560;
   letter-spacing: 0;
@@ -192,7 +192,7 @@ h3 {
 
 .navCta:active,
 .button:active,
-.appStoreLink:active {
+.mobileCta:active {
   transform: scale(0.97);
 }
 
@@ -260,12 +260,12 @@ h3 {
   margin-top: 32px;
 }
 
-.appStoreLink {
+.mobileCta {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: 12px;
   padding: 0 16px;
   border: 1px solid var(--ink-soft);
   background: var(--ink-soft);
@@ -291,24 +291,36 @@ h3 {
   transform: scale(0.98);
 }
 
-.appStoreIcon {
-  width: 17px;
-  height: 17px;
-  flex: 0 0 auto;
-  fill: currentColor;
-}
-
-.appStoreLink span {
+.mobileCta span {
   font-size: 15px;
   font-weight: 620;
   line-height: 1;
 }
 
-.footerStoreLink {
-  margin-top: 22px;
-  border-color: var(--hairline-strong);
-  background: transparent;
+.platformMarks {
+  display: inline-flex;
+  gap: 6px;
+  padding-left: 12px;
+  border-left: 1px solid rgb(255 255 255 / 0.22);
+}
+
+.platformMarks svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+  opacity: 0.86;
+}
+
+.storeAvailability {
+  margin-top: 20px;
+}
+
+.storeAvailability a {
   color: var(--ink);
+  font-weight: 620;
+  text-decoration: underline;
+  text-decoration-color: var(--hairline-strong);
+  text-underline-offset: 4px;
 }
 
 .heroVisual {
@@ -578,10 +590,12 @@ h3 {
   display: grid;
   grid-template-columns: minmax(320px, 0.66fr) minmax(0, 1fr);
   gap: clamp(30px, 5vw, 64px);
-  align-items: center;
+  align-items: start;
 }
 
 .routineCopy {
+  position: sticky;
+  top: 96px;
   display: grid;
   gap: 18px;
   padding: clamp(28px, 5vw, 54px);
@@ -603,44 +617,85 @@ h3 {
   font-weight: 560;
 }
 
-.routinePhones {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(12px, 2vw, 24px);
+.routineStory {
+  position: relative;
+  min-width: 0;
 }
 
-.routinePhones .phoneMock {
-  width: min(100%, 300px);
+.routineProgress {
+  position: sticky;
+  top: 92px;
+  z-index: 1;
+  height: 1px;
+  margin-bottom: 18px;
+  background: linear-gradient(90deg, var(--ink) 0 28%, var(--hairline-strong) 28% 100%);
+}
+
+.routineSlides {
+  display: grid;
+  gap: 18px;
+}
+
+.routineSlide {
+  display: grid;
+  grid-template-columns: minmax(170px, 0.72fr) minmax(220px, 1fr);
+  gap: clamp(18px, 3vw, 36px);
+  align-items: center;
+  min-height: 460px;
+  padding: clamp(18px, 3vw, 30px);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  background: rgb(255 255 255 / 0.42);
+}
+
+.routineSlideCopy {
+  display: grid;
+  gap: 12px;
+}
+
+.routineSlideCopy span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 620;
+}
+
+.routineSlideCopy p {
+  color: var(--body);
+  font-size: 15px;
+  line-height: 1.52;
+}
+
+.routineSlide .phoneMock {
+  width: min(100%, 270px);
+  justify-self: center;
+  transform: translateY(calc(var(--slide) * -10px));
   transition:
     opacity 760ms var(--ease-out),
     transform 760ms var(--ease-out),
     filter 760ms var(--ease-out);
 }
 
-.js .routinePhones.reveal {
+.js .routineStory.reveal {
   opacity: 1;
   filter: none;
   transform: none;
 }
 
-.js .routinePhones.reveal .phoneMock {
+.js .routineStory.reveal .routineSlide {
   opacity: 0;
   filter: blur(5px);
+  transform: translateY(30px) scale(0.985);
+  transition:
+    opacity 720ms var(--ease-out),
+    transform 720ms var(--ease-out),
+    filter 720ms var(--ease-out);
+  transition-delay: calc(var(--slide) * 80ms);
 }
 
-.js .routinePhones.reveal .routinePrimary {
-  transform: translateX(-36px) rotate(-1.8deg) scale(0.97);
-}
-
-.js .routinePhones.reveal .routineSecondary {
-  transform: translateX(36px) translateY(28px) rotate(1.8deg) scale(0.97);
-  transition-delay: 120ms;
-}
-
-.js .routinePhones.reveal[data-inview="true"] .phoneMock {
+.js .routineStory.reveal[data-inview="true"] .routineSlide {
   opacity: 1;
   filter: blur(0);
-  transform: translateX(0) translateY(0) rotate(0) scale(1);
+  transform: translateY(0) scale(1);
 }
 
 .adherenceSection,
@@ -1092,6 +1147,10 @@ h3 {
     margin-left: 0;
   }
 
+  .routineCopy {
+    position: static;
+  }
+
   .pricingGrid,
   .supportGrid,
   .adherenceGrid,
@@ -1164,16 +1223,47 @@ h3 {
     width: min(100%, 300px);
   }
 
-  .routinePhones {
-    display: flex;
-    align-items: flex-start;
-    overflow-x: auto;
-    padding-bottom: 8px;
+  .routineStory {
+    margin-inline: calc(clamp(20px, 4vw, 40px) * -1);
   }
 
-  .routinePhones .phoneMock {
-    flex: 0 0 76%;
-    width: 76%;
+  .routineProgress {
+    position: static;
+    width: calc(100% - 40px);
+    margin: 0 20px 16px;
+    background: linear-gradient(90deg, var(--ink) 0 25%, var(--hairline-strong) 25% 100%);
+  }
+
+  .routineSlides {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding: 0 20px 10px;
+    scroll-padding-inline: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .routineSlides::-webkit-scrollbar {
+    display: none;
+  }
+
+  .routineSlide {
+    grid-template-columns: 1fr;
+    flex: 0 0 min(84vw, 340px);
+    min-height: auto;
+    scroll-snap-align: start;
+  }
+
+  .routineSlide .phoneMock {
+    width: min(100%, 255px);
+    transform: none;
+  }
+
+  .js .routineStory.reveal .routineSlide {
+    opacity: 1;
+    filter: none;
+    transform: none;
   }
 
   .trustGrid {
@@ -1205,7 +1295,7 @@ h3 {
     transform: none;
   }
 
-  .js .routinePhones.reveal .phoneMock,
+  .js .routineStory.reveal .routineSlide,
   .js .supportCard.reveal .phoneMock,
   .js .supportCard.reveal .supportCaption {
     opacity: 1;
