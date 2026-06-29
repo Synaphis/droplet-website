@@ -292,8 +292,7 @@ export default function Home() {
           </a>
           <p>Ingredient, formulation, and routine guidance for calmer skincare decisions.</p>
           <p className="storeAvailability">
-            Available on <a href="https://apps.apple.com/pk/app/droplet-skincare-companion/id6778651508
-Droplet: Skincare Companion">App Store</a> and <a href="#pricing">Google Play</a>
+            Available on <a href="https://apps.apple.com/pk/app/droplet-skincare-companion/id6778651508">App Store</a> and <a href="#pricing">Google Play</a>
           </p>
         </div>
         <nav aria-label="Footer links">
