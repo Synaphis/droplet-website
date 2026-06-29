@@ -143,7 +143,7 @@ export default function Home() {
           </div>
         </div>
         <div className="heroVisual heroEnter heroEnterFive" aria-label="Abstract Droplet decision field">
-          <Image src="/brand-assets/hero-decision-field.svg" alt="" width={720} height={720} priority aria-hidden="true" />
+          <Image src="/brand-assets/hero-evidence-gate-centered-check.svg" alt="" width={720} height={720} priority aria-hidden="true" />
         </div>
       </section>
 
@@ -236,7 +236,7 @@ export default function Home() {
           </div>
         </div>
         <div className="privacyVisual reveal">
-          <Image src="/brand-assets/privacy-ledger.svg" alt="" width={650} height={620} aria-hidden="true" />
+          <Image src="/brand-assets/privacy-ledger-section-fixed.svg" alt="" width={650} height={620} aria-hidden="true" />
         </div>
       </section>
 
@@ -292,7 +292,8 @@ export default function Home() {
           </a>
           <p>Ingredient, formulation, and routine guidance for calmer skincare decisions.</p>
           <p className="storeAvailability">
-            Available on <a href="#pricing">App Store</a> and <a href="#pricing">Google Play</a>
+            Available on <a href="https://apps.apple.com/pk/app/droplet-skincare-companion/id6778651508
+Droplet: Skincare Companion">App Store</a> and <a href="#pricing">Google Play</a>
           </p>
         </div>
         <nav aria-label="Footer links">
