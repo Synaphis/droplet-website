@@ -132,7 +132,6 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="heroCopy">
-          <p className="heroKicker heroEnter heroEnterOne">Droplet reads the decision before it reaches your skin.</p>
           <h1 className="heroEnter heroEnterTwo">Skincare, checked against the label and your history.</h1>
           <p className="lede heroEnter heroEnterThree">
             Droplet turns product claims, ingredients, personal tolerance, and routine memory into calmer guidance before another bottle joins your shelf.
