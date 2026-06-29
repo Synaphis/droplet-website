@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Droplet",
-  description: "Privacy Policy for Droplet, including data use, sharing, retention, deletion, and user rights."
+  title: "Privacy Policy",
+  description: "Privacy Policy for Droplet, including data use, sharing, retention, deletion, and user rights.",
+  alternates: { canonical: "/privacy" }
 };
 
 const dataGroups = [

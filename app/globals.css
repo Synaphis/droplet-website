@@ -1,19 +1,15 @@
 :root {
   --canvas: #f5f5f5;
-  --canvas-soft: #fafafa;
   --ink: #0c0a09;
   --ink-soft: #292524;
   --body: #4b4741;
   --muted: #746f67;
-  --muted-soft: #a8a29e;
   --hairline: #e5e1dc;
   --hairline-strong: #d3cec7;
   --surface: #ffffff;
   --surface-soft: #efeeeb;
   --dark: #0c0a09;
   --dark-elevated: #1c1917;
-  --green: #2b7a4b;
-  --amber: #9a6a16;
   --radius: 14px;
   --control-radius: 6px;
   --max: 1200px;

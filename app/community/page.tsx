@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Community | Droplet"
+  title: "Community",
+  description: "A calmer Droplet community for skincare product checks, routine notes, and label-aware decisions without sponsored pressure.",
+  alternates: { canonical: "/community" }
 };
 
 const principles = [

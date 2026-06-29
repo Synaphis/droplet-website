@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Use | Droplet",
-  description: "Terms of Use for Droplet, including subscriptions, acceptable use, user content, guidance limits, and legal disclaimers."
+  title: "Terms of Use",
+  description: "Terms of Use for Droplet, including subscriptions, acceptable use, user content, guidance limits, and legal disclaimers.",
+  alternates: { canonical: "/terms" }
 };
 
 export default function TermsPage() {

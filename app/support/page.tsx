@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Support | Droplet",
-  description: "Public support page for Droplet users, including account deletion, billing, privacy, scan, report, and routine help."
+  title: "Support",
+  description: "Public support page for Droplet users, including account deletion, billing, privacy, scan, report, and routine help.",
+  alternates: { canonical: "/support" }
 };
 
 const requests = [

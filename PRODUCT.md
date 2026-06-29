@@ -1,9 +1,6 @@
-A couple of problems the phone mockups has background like white, they don’t look like a stand alone phone like iPhone 17 pro.
-
-Also as we building this website for convergence of visitors to try our iOS/android application, I think you need to understand the crux of the product, also the pricing section is also missing. It’s a website that would serve as the marketing or website present of the product like opal has one and linear has and so Notion, with a proper fitting components on landing page and everything. You also need to understand the product to for privacy and legal pages and other pages that are queried especially when it comes down to App Store and google play store submissions. Really understand the product:
-
-
 # Droplet Marketing Core
+
+This website is the public brand, conversion, support, privacy, and legal surface for Droplet. The current direction is brand-first and abstract rather than screenshot-led: Droplet should feel like a calm, independent decision layer for skincare labels, routines, and memory.
 
 ## 1. The Product In One Sentence
 

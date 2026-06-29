@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Medical Disclaimer | Droplet",
-  description: "Medical disclaimer for Droplet skincare guidance."
+  title: "Medical Disclaimer",
+  description: "Medical disclaimer for Droplet skincare guidance, including informational-use limits and professional-care reminders.",
+  alternates: { canonical: "/medical-disclaimer" }
 };
 
 export default function MedicalDisclaimerPage() {

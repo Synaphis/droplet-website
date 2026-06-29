@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "mockups": "node scripts/create-phone-mockups.mjs",
     "start": "next start",
     "lint": "next lint"
   },
