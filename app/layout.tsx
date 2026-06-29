@@ -3,10 +3,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
-  applicationName: "Droplet AI",
-  title: "Droplet AI - Private skincare scanner and routine intelligence",
+  applicationName: "Droplet",
+  title: "Droplet - Private skincare scanner and routine intelligence",
   description:
-    "Droplet AI scans skincare labels, explains ingredients, checks claims, evaluates profile fit, and turns product decisions into routines.",
+    "Droplet scans skincare labels, explains ingredients, checks claims, evaluates profile fit, and turns product decisions into routines.",
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }]
   },
   openGraph: {
-    title: "Droplet AI",
+    title: "Droplet",
     description:
       "Private skincare scanner and routine intelligence for calmer product decisions.",
-    images: [{ url: "/logo-2.png", width: 800, height: 800, alt: "Droplet AI logo" }]
+    images: [{ url: "/logo-2.png", width: 800, height: 800, alt: "Droplet logo" }]
   }
 };
 

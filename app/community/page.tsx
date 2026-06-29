@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Community | Droplet AI"
+  title: "Community | Droplet"
 };
 
 const principles = [
@@ -27,7 +27,7 @@ export default function CommunityPage() {
   return (
     <main className="legalPage">
       <header className="legalHeader">
-        <a href="/">Back to Droplet AI</a>
+        <a href="/">Back to Droplet</a>
         <p className="sectionLabel">Community</p>
         <h1>A calmer place to compare skincare decisions.</h1>
         <p>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 640" role="img" aria-label="">
+  <rect width="760" height="640" fill="none"/>
+  <g fill="#fff" stroke="#0c0a09" stroke-width="1.2">
+    <rect x="72" y="78" width="308" height="460" rx="20"/>
+    <rect x="410" y="118" width="274" height="118" rx="14"/>
+    <rect x="410" y="262" width="274" height="118" rx="14"/>
+    <rect x="410" y="406" width="274" height="118" rx="14"/>
+  </g>
+  <g stroke="#0c0a09" stroke-width="1.2" stroke-linecap="round">
+    <path d="M118 156h204M118 192h158M118 228h210M118 310h178M118 346h224M118 382h136M118 456h208"/>
+    <path d="M380 177h30M380 321h30M380 465h30" opacity=".42"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" fill="#0c0a09">
+    <text x="118" y="126" font-size="18" font-weight="700">label</text>
+    <text x="118" y="276" font-size="13" font-weight="650" letter-spacing="3" fill="#746f67">INGREDIENTS</text>
+    <text x="118" y="432" font-size="13" font-weight="650" letter-spacing="3" fill="#746f67">DIRECTIONS</text>
+    <text x="438" y="154" font-size="15" font-weight="700">claim check</text>
+    <text x="438" y="181" font-size="13" fill="#746f67">supported, partial, or vague</text>
+    <text x="438" y="298" font-size="15" font-weight="700">caution</text>
+    <text x="438" y="325" font-size="13" fill="#746f67">irritation, conflicts, pacing</text>
+    <text x="438" y="442" font-size="15" font-weight="700">next step</text>
+    <text x="438" y="469" font-size="13" fill="#746f67">place, delay, or skip</text>
+  </g>
+  <g fill="none" stroke="#0c0a09" stroke-width="1.2">
+    <path d="M638 162l12 12 24-30"/>
+    <path d="M638 306l12 12 24-30"/>
+    <path d="M638 450l12 12 24-30"/>
+  </g>
+</svg>

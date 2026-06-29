@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Support | Droplet AI",
-  description: "Public support page for Droplet AI users, including account deletion, billing, privacy, scan, report, and routine help."
+  title: "Support | Droplet",
+  description: "Public support page for Droplet users, including account deletion, billing, privacy, scan, report, and routine help."
 };
 
 const requests = [
@@ -28,18 +28,18 @@ export default function SupportPage() {
   return (
     <main className="legalPage">
       <header className="legalHeader">
-        <a href="/">Back to Droplet AI</a>
+        <a href="/">Back to Droplet</a>
         <p className="sectionLabel">Support</p>
         <h1>Help for scans, reports, routines, and account questions.</h1>
         <p>
-          This page is the public support destination for Droplet AI users and app reviewers. It covers product behavior, billing guidance, privacy requests, and where medical questions should be directed.
+          This page is the public support destination for Droplet users and app reviewers. It covers product behavior, billing guidance, privacy requests, and where medical questions should be directed.
         </p>
       </header>
 
       <section className="legalSection" id="contact">
         <h2>Contact support</h2>
         <p>
-          Use this public support page or the in-app support flow for scan issues, routine questions, billing guidance, privacy requests, and account deletion. When contacting support, include the email or account identifier connected to Droplet AI when possible so the request can be verified.
+          Use this public support page or the in-app support flow for scan issues, routine questions, billing guidance, privacy requests, and account deletion. When contacting support, include the email or account identifier connected to Droplet when possible so the request can be verified.
         </p>
       </section>
 
@@ -68,7 +68,7 @@ export default function SupportPage() {
       <section className="legalSection">
         <h2>Medical scope</h2>
         <p>
-          Droplet AI can explain ingredients, claims, routine placement, and profile fit. It does not diagnose, treat, cure, or prevent skin conditions. Severe reactions, persistent irritation, prescription-product questions, pregnancy-related questions, or diagnosed skin conditions should be discussed with a qualified professional.
+          Droplet can explain ingredients, claims, routine placement, and profile fit. It does not diagnose, treat, cure, or prevent skin conditions. Severe reactions, persistent irritation, prescription-product questions, pregnancy-related questions, or diagnosed skin conditions should be discussed with a qualified professional.
         </p>
       </section>
 
